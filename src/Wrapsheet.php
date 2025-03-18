@@ -32,7 +32,6 @@ class Wrapsheet
 
         $wrapper = new Wrapsheet;
         $data = $wrapper->client->get("sheets/{$id}");
-
         return Sheet::from($data);
 
         // first, send the GET request

@@ -79,8 +79,8 @@ class Sheet
         $this->workspace = Workspace::from($data['workspace']);
         $this->hasSummaryFields = $data['hasSummaryFields'];
         $this->permalink = $data['permalink'];
-        $this->createdAt = Carbon::fromSerialized($data['createdAt']);
-        $this->modifiedAt = Carbon::fromSerialized($data['modifiedAt']);
+        $this->createdAt = Carbon::parse($data['createdAt']);
+        $this->modifiedAt = Carbon::parse($data['modifiedAt']);
         $this->isMultiPicklistEnabled = $data['isMultiPicklistEnabled'];
         // $this->columns = collect();
         // $this->rows = collect();
