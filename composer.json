@@ -23,7 +23,9 @@
     "php": "^8.1",
     "guzzlehttp/guzzle": "^7.2",
     "spatie/laravel-package-tools": "^1.16",
-    "illuminate/contracts": "^10.0||^11.0||^12.0"
+    "nesbot/carbon": "^2.63",
+    "illuminate/support": "^10.0||^11.0",
+    "illuminate/contracts": "^10.0||^11.0"
   },
   "require-dev": {
     "larastan/larastan": "^2.10",
@@ -49,13 +51,10 @@
     }
   },
   "scripts": {
-    "post-autoload-dump": "@composer run prepare",
-    "prepare": "@php vendor/bin/testbench package:discover --ansi",
-    "analyse": "vendor/bin/phpstan analyse",
-    "analyze": "vendor/bin/phpstan analyse",
-    "test": "./vendor/bin/testbench package:test && ./vendor/bin/coverage-check ./build/logs/clover.xml 100",
-    "format": "vendor/bin/pint",
-    "pint": "vendor/bin/pint"
+    "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+    "analyze": "vendor/bin/phpstan analyse --xdebug",
+    "test": "./vendor/bin/testbench package:test && ./vendor/bin/coverage-check build/logs/clover.xml 100",
+    "pint": "./vendor/bin/pint"
   },
   "config": {
     "sort-packages": true,
