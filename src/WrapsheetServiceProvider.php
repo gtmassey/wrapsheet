@@ -4,7 +4,6 @@ namespace Gtmassey\Wrapsheet;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Gtmassey\SmartsheetLaravel\Commands\SmartsheetLaravelCommand;
 
 class WrapsheetServiceProvider extends PackageServiceProvider
 {

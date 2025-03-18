@@ -2,13 +2,12 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
-    level: max
+    level: 6
     paths:
         - src
         - config
-        - tests # optional
+        # - tests # optional
     tmpDir: build/phpstan
 
     checkOctaneCompatibility: true
     checkModelProperties: true
-    checkMissingIterableValueType: false

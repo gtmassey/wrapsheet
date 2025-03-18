@@ -11,6 +11,6 @@ class Wrapsheet extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Gtmassey\WrapSheet\Wrapsheet::class;
+        return \Gtmassey\Wrapsheet\Wrapsheet::class;
     }
 }

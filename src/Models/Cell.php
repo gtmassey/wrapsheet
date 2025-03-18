@@ -2,7 +2,4 @@
 
 namespace Gtmassey\Wrapsheet\Models;
 
-class Cell
-{
-
-}
+class Cell {}

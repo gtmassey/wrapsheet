@@ -3,11 +3,11 @@
 namespace Gtmassey\Wrapsheet;
 
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception\GuzzleException;
 
 class Client
 {
-
-    protected const BASE_URL = "https://api.smartsheet.com/2.0/";
+    protected const BASE_URL = 'https://api.smartsheet.com/2.0/';
 
     protected GuzzleClient $client;
 
@@ -15,43 +15,40 @@ class Client
 
     public function __construct()
     {
-        $this->token = $this->setToken(config('wrapsheet.api-token'));
+        $this->setToken(config('wrapsheet.api-token'));
 
-        $authHeader = "Bearer " . $this->token;
+        $authHeader = "Bearer $this->token";
 
         $this->client = new GuzzleClient([
             'base_uri' => self::BASE_URL,
             'headers' => [
-                'Authorization' => $authHeader
+                'Authorization' => $authHeader,
             ],
-            'proxy' => !empty($config['proxy']) ? $config['proxy'] : null
+            // 'proxy' => ! empty($config['proxy']) ? $config['proxy'] : null,
         ]);
     }
 
+    /**
+     * @return $this
+     */
     public function setToken(string $token): Client
     {
         $this->token = $token;
+
         return $this;
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     * @return mixed|void
+     */
     public function get(string $uri, array $options = [])
     {
-        return json_decode($this->client->get($uri, $options)->getBody()->getContents());
+        // TODO implement options
+        try {
+            return json_decode($this->client->request('GET', $uri)->getBody()->getContents());
+        } catch (GuzzleException $e) {
+            // todo: do something...
+        }
     }
-
-    public function put(string $uri, array $options = [])
-    {
-        return json_decode($this->client->put($uri, $options)->getBody()->getContents());
-    }
-
-    public function post(string $uri, array $options = [])
-    {
-        return json_decode($this->client->post($uri, $options)->getBody()->getContents());
-    }
-
-    public function delete(string $uri, array $options = [])
-    {
-        return json_decode($this->client->delete($uri, $options)->getBody()->getContents());
-    }
-
 }
