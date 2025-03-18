@@ -46,7 +46,7 @@ class Client
     {
         // TODO implement options
         try {
-            //dd(json_decode($this->client->request('GET', $uri)->getBody()->getContents(), true));
+            // dd(json_decode($this->client->request('GET', $uri)->getBody()->getContents(), true));
             return json_decode($this->client->request('GET', $uri)->getBody()->getContents(), true);
         } catch (GuzzleException $e) {
             // todo: do something...
