@@ -20,7 +20,7 @@
     "laravel"
   ],
   "require": {
-    "php": "^8.1",
+    "php": "^8.1|^8.2|^8.3",
     "guzzlehttp/guzzle": "^7.9",
     "illuminate/contracts": "*",
     "illuminate/support": "*",
@@ -30,8 +30,8 @@
   "require-dev": {
     "larastan/larastan": "^2.10",
     "laravel/pint": "^1.6",
-    "nunomaduro/collision": "^6.4",
-    "orchestra/testbench": "^8.34",
+    "nunomaduro/collision": "^6.4|^7.11.0|^v8.5.0",
+    "orchestra/testbench": "^8.34|^9.5",
     "phpstan/extension-installer": "^1.2",
     "phpstan/phpstan-deprecation-rules": "^1.1.2",
     "phpstan/phpstan-mockery": "^1.1.1",
