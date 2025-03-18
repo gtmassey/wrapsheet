@@ -1,6 +1,6 @@
 <?php
 
-namespace Gtmassey\SmartsheetLaravel\Tests;
+namespace Gtmassey\Wrapsheet\Tests;
 
 class TrueTest extends TestCase
 {

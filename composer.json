@@ -41,13 +41,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Gtmassey\\SmartsheetLaravel\\": "src/",
-      "Gtmassey\\SmartsheetLaravel\\Database\\Factories\\": "database/factories/"
+      "Gtmassey\\Wrapsheet\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Gtmassey\\SmartsheetLaravel\\Tests\\": "tests/"
+      "Gtmassey\\Wrapsheet\\Tests\\": "tests/"
     }
   },
   "scripts": {
@@ -69,7 +68,7 @@
         "Gtmassey\\Wrapsheet\\WrapsheetServiceProvider"
       ],
       "aliases": {
-        "WrapSheetLaravel": "Gtmassey\\WrapSheet\\Facades\\WrapSheetLaravel"
+        "Wrapsheet": "Gtmassey\\Wrapsheet\\Facades\\Wrapsheet"
       }
     }
   },
