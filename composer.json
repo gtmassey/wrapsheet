@@ -24,7 +24,7 @@
     "guzzlehttp/guzzle": "^7.9",
     "illuminate/contracts": "*",
     "illuminate/support": "*",
-    "nesbot/carbon": "^2.73",
+    "nesbot/carbon": "^3.10",
     "spatie/laravel-package-tools": "^1.16"
   },
   "require-dev": {
